@@ -1,0 +1,14 @@
+/usr/local/spark/bin/run-example --master local[2] streaming.NetworkWordCount master 9999
+
+
+<parent>
+        <artifactId>scala_spark</artifactId>
+        <groupId>org.example</groupId>
+        <version>1.0-SNAPSHOT</version>
+</parent>
+
+
+
+kafka-topics.sh --list --zookeeper master:2181
+
+kafka-console-producer.sh --topic wc-topic --broker-list master:9092
